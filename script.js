@@ -603,10 +603,10 @@ function escribirTextoLineaPorLinea() {
       if (charIndex < chars.length) {
         linea.textContent += chars[charIndex];
         charIndex++;
-        setTimeout(escribirCaracter, 25);
+        setTimeout(escribirCaracter, 5);
       } else {
         index++;
-        setTimeout(escribirSiguienteLinea, 400);
+        setTimeout(escribirSiguienteLinea, 200);
       }
     }
 
