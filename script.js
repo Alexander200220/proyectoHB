@@ -30,16 +30,10 @@ const phrases = [
   "Feliz vuelta al sol",
   "Bienvenidos los 20",
   "Bella",
-  "Brilla como siempre hoy y siempre",
-  "A tus lindos 20",
-  "Mujercita increíble",
-  "Preciosa",
+  "Que brille tu esencia hoy y siempre",
+  "Tus lindos 20",
   "Que la pases bonito",
   "Te quiero",
-  "Eres Maravillosa",
-  "Hermosa",
-  "Mujercita Linda",
-  "Encantadora",
 ];
 
 const images = [
