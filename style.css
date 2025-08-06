@@ -210,3 +210,83 @@ canvas {
     visibility: visible;
     transform: translateX(-50%) translateY(-20px); /* Un pequeño movimiento para hacerlo más dinámico */
 }
+
+
+
+#boton-regalo {
+  /* Estilos del botón "Regalo" */
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff8c00, #ff4500, #ffd700);
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(255, 140, 0, 0.5);
+  cursor: pointer;
+  transition: opacity 1s ease-in-out, transform 0.3s ease-in-out, background 0.5s ease;
+  animation: boton-animado 4s infinite linear;
+}
+
+#boton-regalo:hover {
+  transform: scale(1.05);
+}
+
+#boton-regalo.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes boton-animado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#contenedor-imagen {
+  /* Estilos del contenedor de la imagen */
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#contenedor-imagen.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#imagen-regalo {
+  /* Estilos para la imagen */
+  max-width: 90vw;
+  max-height: 80vh;
+  display: block;
+  border-radius: 10px;
+}
+
+#texto-encima-imagen {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#texto-encima-imagen.visible {
+    opacity: 1;
+    visibility: visible;
+}

@@ -572,19 +572,25 @@ document.getElementById("correa").addEventListener("click", () => {
 function escribirTextoLineaPorLinea() {
   const contenido = document.getElementById("contenido-hoja");
   const lineas = [
-    "Espero no te molestes por lo anterior, quiero decirte lo siguiente:",
     "Para empezar por fin 20 añitos,",
     "Desearte lo mejor en este día especial, que la pases muy bonito con tu familia y amigos cercanos. Eres una mujer increíble de verdad, me gusta tu manera de ver las cosas, también como eres de linda en todos los aspectos, aunque hay que admitir que no eres muy linda cuando te enojas jajajaja, pero disfruto mucho pasar tiempo contigo.",
     "Tambien quiero que sepas que... aunque quizás ya lo he dicho pero igual te lo repito, cuando necesites cualquier cosa en todo aspecto quiero que tengas presente que yo estaré aquí para ti, no eres alguien que se deja vencer fácilmente, eres una mujercita constante y perseverante, que cuando te propones algo lo haces y te felicito por ello, te mando un fuerte abrazo y un beso en la frente, muchas bendiciones y éxitos en todo, yo sé que vas a lograr cosas grandes, confió en ti. Se te quiere Lesly <3",
     "HAPPY BIRTHDAY!!!",
-    "Att: Alexander",
+    "Att: Alexander.",
 ];
 
   contenido.innerHTML = "";
   let index = 0;
 
   function escribirSiguienteLinea() {
-    if (index >= lineas.length) return;
+    if (index >= lineas.length) {
+      // CÓDIGO NUEVO: El texto ha terminado, muestra el botón
+      const botonRegalo = document.getElementById("boton-regalo");
+      if (botonRegalo) {
+        botonRegalo.classList.add('visible');
+      }
+      return;
+    }
 
     const linea = document.createElement("p");
     linea.textContent = "";
@@ -609,3 +615,10 @@ function escribirTextoLineaPorLinea() {
 
   escribirSiguienteLinea();
 }
+
+document.getElementById("boton-regalo").addEventListener("click", () => {
+    const contenedorImagen = document.getElementById("contenedor-imagen");
+    const textoEncimaImagen = document.getElementById("texto-encima-imagen");
+    contenedorImagen.classList.add('visible');
+    textoEncimaImagen.classList.add('visible');
+});
